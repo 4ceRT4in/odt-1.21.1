@@ -1,20 +1,18 @@
 package xyz.frxzenluke.titanreborn.command;
 
-import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.arguments.StringArgumentType;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.suggestion.SuggestionProvider;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
-import net.minecraft.screen.ScreenHandler;
-import net.minecraft.screen.GenericContainerScreenHandler;
+import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.command.CommandManager;
 import net.minecraft.command.CommandSource;
 import net.minecraft.text.Text;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.screen.NamedScreenHandlerFactory;
-import net.minecraft.screen.ScreenHandlerType;
+import net.minecraft.screen.ScreenHandler;
 import xyz.frxzenluke.titanreborn.OneDayTitan;
 
 public class InvseeCommand {
@@ -57,17 +55,12 @@ public class InvseeCommand {
                 public ScreenHandler createMenu(int syncId,
                                                 net.minecraft.entity.player.PlayerInventory playerInventory,
                                                 net.minecraft.entity.player.PlayerEntity player) {
-                    return new GenericContainerScreenHandler(
-                            ScreenHandlerType.GENERIC_9X4,
-                            syncId,
-                            playerInventory,
-                            targetPlayer.getInventory(),
-                            4
-                    );
+                    return new InvseeScreenHandler(syncId, playerInventory, targetPlayer);
                 }
             });
         }
 
         return 1;
     }
+
 }

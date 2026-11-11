@@ -44,11 +44,11 @@ public class StartFinaleCommand {
                     1.0F,
                     1.0F
             );
-            player.sendMessage(Text.of(OneDayTitan.getPrefix() + "§cThe grace period lasts §b1 §cminute!"), false);
+            player.sendMessage(Text.of(OneDayTitan.getPrefix() + "§cThe grace period lasts §b30 §cseconds!"), false);
         });
 
         protectionTimeScheduler.scheduleAtFixedRate(source.getServer(), new Runnable() {
-            int countdown = 60;
+            int countdown = 30;
             @Override
             public void run() {
                 if (countdown <= 0) {
