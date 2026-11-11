@@ -1,0 +1,27 @@
+{
+	"schemaVersion": 1,
+	"id": "onedaytitan",
+	"version": "${version}",
+	"name": "OneDayTitan",
+	"description": "OneDayTitan Server-Side Mod for Titan Reborn",
+	"authors": [
+		"FrxzenLuke"
+	],
+	"license": "CC0-1.0",
+	"icon": "assets/onedaytitan/icon.png",
+	"environment": "server",
+	"entrypoints": {
+		"server": [
+			"xyz.frxzenluke.titanreborn.OneDayTitan"
+		]
+	},
+	"mixins": [
+		"onedaytitan.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.16.9",
+		"minecraft": "~1.21.1",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}

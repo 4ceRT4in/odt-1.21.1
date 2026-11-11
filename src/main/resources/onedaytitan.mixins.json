@@ -1,0 +1,13 @@
+{
+	"required": true,
+	"package": "xyz.frxzenluke.titanreborn.mixin",
+	"compatibilityLevel": "JAVA_21",
+	"mixins": [
+		"ServerPlayerEntityMixin",
+		"BroadcastChatMessageMixin",
+		"MixinServerPlayNetworkHandler"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}
